@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Achievements</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="../../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- js -->
+    <script src="../../static/js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <!-- //fonts -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="../../static/js/move-top.js"></script>
+    <script type="text/javascript" src="../../static/js/easing.js"></script>
+    <script src="../../static/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+
+
+    function myshow(surl){
+        var w=$(window).width();
+        var h=$(window).height();
+        $('#mframe').width(w-40);
+        $('#mframe').height(h-120);
+        $('#mydlg').width(w);
+        $('#mydlg').height(h-40);
+        $("#mframe").attr("src",surl);
+        $('#myModal').modal('show');
+    }
+    </script>
+    <!-- start-smoth-scrolling -->
+</head>
+<body>
+    <!-- banner -->
+    <div class="header">
+        <div class="container">
+            <div class="header-nav">
+                <nav class="navbar navbar-default">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h1>
+                                <a class="navbar-brand" href="index">
+                                    扬州大学李志强教授实验室
+                                    <p>The Laboratory of Professor Zhiqiang Li</p>
+                                </a>
+                            </h1>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav ">
+                                <li><a href="index"><h4>首页</h4><h5>Home</h5></a></li>
+                                
+                                <!-- <li><a href="list"><h4>会议</h4><h5>Meeting</h5></a></li> -->
+                                <li><a href="people"><h4>研究团队</h4><h5>People</h5></a></li>
+                                <li><a class=" active" href="achievements"><h4>科研成果</h4><h5>Achievements</h5></a></li>
+                                <li><a href="resources"><h4>系统展示</h4><h5>Resources</h5></a></li>
+                                <li><a href="contact"><h4>联系我们</h4><h5>Contact</h5></a></li>
+                                <li><a href="#"><h4>内部管理</h4><h5>（预留）</h5></a></li>
+                            </ul>
+                        </div><!-- /navbar-collapse -->
+                        <!-- search-scripts -->
+                        <script src="/static/js/classie.js"></script>
+                        <script src="/static/js/uisearch.js"></script>
+                        <script>
+                            new UISearch(document.getElementById('sb-search'));
+                        </script>
+                        <!-- //search-scripts -->
+                    </nav>
+            </div>
+        </div>
+
+    </div>
+    <div class="banner-bottom">
+        <h3 style="color: #007751">
+            科研成果</h3>
+        <h3 style="font-size: 24px; color: #999; margin-top: 10px;">
+            Achievements</h3>
+    </div>
+    <button class="btn" onclick="usechange()" style="margin-left: 120px">查看论文成果</button>
+    <button class="btn" onclick="usechange2()">查看项目</button>
+    <div class="typrography" style="padding-top: 0px;">
+        <div class="container container1">
+            <div class="bs-docs-example">
+                <table class="table table-hover table-bordered" >
+                    <thead>
+                        <tr>
+                            <th style="width: 40px">
+                                序号
+                            </th>
+                            <th>
+                                论文信息
+                            </th>
+                            <th style="width: 190px">
+                                检索证明
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+
+                    {% for article in article_list %}
+                        <tr>
+                            <td>
+                                    {{no|add:forloop.counter}}
+                            </td>
+                            <td>
+
+                                    {{article.paperinfo}}
+                                <button type="button" class="btn btn-info btn-sm qypdf" >
+                                <a href="#" onclick="myshow('{{article.pdf_link}}')" >PDF</a>
+                                </button>
+                            </td>
+                            <td>
+                                {% if article.index != None  %}
+                                    {% if article.index != '' %}
+                                <button type="button" class="btn btn-info btn-sm">
+                                    <a href="{{article.index_link}}">{{article.index}}</a>
+                                </button>
+                                        {% endif %}
+                                {% endif %}
+                                {% if article.index2 != None  %}
+                                     {% if article.index2 != '' %}
+                                <button type="button" class="btn btn-info btn-sm">
+                                    <a href="{{article.index_link2}}">{{article.index2}}</a>
+                                </button>
+                                         {% endif %}
+                                {% endif %}
+                                {% if article.index3 != None  %}
+                                     {% if article.index3 != ''%}
+                                <button type="button" class="btn btn-info btn-sm">
+                                    <a href="{{article.index_link3}}">{{article.index3}}</a>
+                                </button>
+                                         {% endif %}
+                                {% endif %}
+                            </td>
+                        </tr>
+                     {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="body-footer">
+            <div class="col-md-4 col-md-offset-3">
+            <nav aria-label="Page navigation">
+                  <ul class="pagination">
+                    <li>
+                      <a href="/blog/index?page={{previous_page}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    {% for num in page_num %}
+                    <li><a href="/blog/achievements?page={{num}}">{{num}}</a></li>
+                    {% endfor %}
+                    <li>
+                      <a href="/blog/achievements?page={{next_page}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+            </nav>
+            </div>
+        </div>
+        </div>
+    <div class="container2" style="width: 1170px;display: block;padding-right:15px;padding-left:15px;margin-right:auto;margin-left: auto">
+            <div class="bs-docs-example">
+                <table class="table table-hover table-bordered" >
+                    <thead>
+                        <tr>
+                            <th style="width: 40px">
+                                序号
+                            </th>
+                            <th>
+                                项目名称
+                            </th>
+                            <th style="width: 190px">
+                                项目网址
+                            </th>
+                            <th style="width: 190px">
+                                项目方向
+                            </th>
+                            <th style="width: 190px">
+                                项目人数
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+
+                    {% for project in all_achieveproject %}
+                        <tr>
+                            <td>
+                                    {{0|add:forloop.counter}}
+                            </td>
+                            <td>
+
+                                    {{project.projectname}}
+                            </td>
+                            <td>
+                               {{ project.projecturl }}
+                            </td>
+                         <td>
+                               {{ project.direction }}
+                            </td>
+                         <td>
+                               {{ project.peoplenum }}
+                            </td>
+                        </tr>
+                     {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="footer-top" style="clear: both;">
+        <p>
+            Copyright &copy; 2020.扬州大学李志强教授版权所有 All rights reserved.</p>
+    </div>
+
+    <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="mydlg" class="modal-dialog" >
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					显示PDF
+				</h4>
+			</div>
+			<div class="modal-body">
+				<iframe id ="mframe" class="embed-responsive-item" src=""></iframe>
+      </div>
+      <!--
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+
+      </div>
+      -->
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+    <!-- for bootstrap working -->
+
+    <!-- //for bootstrap working -->
+    <!-- smooth scrolling -->
+    <script type="text/javascript">
+        function usechange() {
+            $(".container2").hide();
+            $(".container1").show();
+
+        }
+        function usechange2(){
+            $(".container1").hide();
+             $(".container2").show();
+
+
+
+        }
+        $(function () {
+            $(".container2").hide();
+            $(".container1").show();
+
+        })
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear' 
+            };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+            $('.qypdf').click(function(){
+
+	            //location.href="servlet/showtaskdetail";
+	        });
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;">
+    </span></a>
+    <!-- //smooth scrolling -->
+</body>
+</html>

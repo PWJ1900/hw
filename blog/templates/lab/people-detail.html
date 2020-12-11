@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- js -->
+    <script src="/static/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <!-- //js -->
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <!-- //fonts -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="/static/js/move-top.js"></script>
+    <script type="text/javascript" src="/static/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 3000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+</head>
+<body>
+    <!-- banner -->
+    <div class="header">
+        <div class="container">
+            <div class="header-nav">
+                <nav class="navbar navbar-default">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h1>
+                                <a class="navbar-brand" href="../index">
+                                    扬州大学李志强教授实验室
+                                    <p>The Laboratory of Professor Zhiqiang Li</p>
+                                </a>
+                            </h1>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav ">
+                                <li><a class=" active" href="../index"><h4>首页</h4><h5>Home</h5></a></li>
+                                
+{#                                <li><a href="list"><h4>科学研究</h4><h5>Research</h5></a></li>#}
+                                <li><a href="../people"><h4>研究团队</h4><h5>People</h5></a></li>
+                                <li><a href="../achievements"><h4>科研成果</h4><h5>Achievements</h5></a></li>
+                                <li><a href="../resources"><h4>科研资源</h4><h5>Resources</h5></a></li>
+                                <li><a href="../contact"><h4>联系我们</h4><h5>Contact</h5></a></li><li><a href="#"><h4>内部管理</h4><h5>（预留）</h5></a></li>
+                            </ul>
+                        </div><!-- /navbar-collapse -->
+                        <!-- search-scripts -->
+                        <script src="/static/js/classie.js"></script>
+                        <script src="/static/js/uisearch.js"></script>
+                        <script>
+                            new UISearch(document.getElementById('sb-search'));
+                        </script>
+                        <!-- //search-scripts -->
+                    </nav>
+            </div>
+        </div>
+    </div>
+    <!-- banner -->
+    <!-- banner-bottom -->
+    <section class="team-details gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 image-column">
+                    <figure class="image-box"><img src="{{imageuse.pic}}" alt=""></figure>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 content-column">
+                    <div class="team-details-content">
+                        <div class="top-content">
+                            <div class="title">{{curr_people.name}}</div>
+                            <div class="text">{{curr_people.identity}}<br />{{curr_people.major}}</div>
+                        </div>
+                        <div class="lower-content">
+                            <h3 class="title">{{curr_people.subject}}</h3>
+                            <div class="text">
+                                <p>{% autoescape off %}{{curr_people.description}}{% endautoescape %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- team-details end -->
+
+
+    <!-- education-section -->
+    <section class="education-section inner-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-sm-12 offset-lg-4 inner-column">
+                    <div class="inner-content">
+                        <h3 class="education-title">Education</h3>
+                        <div class="content-box">
+
+                            <div class="single-item">
+                                <div class="date">Aug 2018</div>
+                                <h4>Doctor of Philosophy</h4>
+                                <div class="text">in Mechanical Engineering Stanford University</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- education-section end -->
+
+
+    <!-- award-section -->
+    <section class="award-section gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12 offset-lg-4">
+                    <div class="award-content">
+                        <h3 class="award-title">Honors & Awards</h3>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="content-box">
+                                    <div class="single-item">
+                                        <span>Nov 2018</span>
+                                        <h4>Doctor of Philosophy</h4>
+                                        <div class="text">in Mechanical Engineering Stanford University</div>
+                                    </div>
+                                    <div class="single-item">
+                                        <span>Dec 2018</span>
+                                        <h4>Master of Science</h4>
+                                        <div class="text">Kusan National University, Busan, South Korea</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="content-box">
+                                    <div class="single-item">
+                                        <span>Nov 2018</span>
+                                        <h4>Bachelor of Science</h4>
+                                        <div class="text">University of California, Davis, USA</div>
+                                    </div>
+                                    <div class="single-item">
+                                        <span>Dec 2018</span>
+                                        <h4>California Conference</h4>
+                                        <div class="text">California National University, California, USA</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- award-section end -->
+
+
+    <!-- possition-section -->
+    <section class="possition-section inner-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-sm-12 offset-lg-4 inner-column">
+                    <div class="inner-content">
+                        <h3 class="education-title">Positions</h3>
+                        <div class="content-box">
+                            <div class="single-item">
+                                <div class="date">Aug 2018</div>
+                                <h4>Doctor of Philosophy</h4>
+                                <div class="text">in Mechanical Engineering Stanford University</div>
+                            </div>
+                            <div class="single-item">
+                                <div class="date">Oct 2018</div>
+                                <h4>Master of Science</h4>
+                                <div class="text">Kusan National University, Busan, South Korea</div>
+                            </div>
+                            <div class="single-item">
+                                <div class="date">Nov 2018</div>
+                                <h4>Bachelor of Science</h4>
+                                <div class="text">University of California, Davis, USA</div>
+                            </div>
+                            <div class="single-item">
+                                <div class="date">Dec 2018</div>
+                                <h4>California Conference</h4>
+                                <div class="text">California National University, California, USA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-top" style="clear: both;">
+        <p>
+            Copyright &copy; 2020.扬州大学李志强教授版权所有 All rights reserved.</p>
+    </div>
+    <!-- //footer-top -->
+    <!-- for bootstrap working -->
+    <script src="/static/js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+    <!-- smooth scrolling -->
+    <script type="text/javascript">
+        $(document).ready(function () { /* var defaults = { containerID: 'toTop', // fading
+    element id containerHoverID: 'toTopHover', // fading element hover id scrollSpeed:
+    1200, easingType: 'linear' }; */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;">
+    </span></a>
+    <!-- //smooth scrolling -->
+</body>
+</html>

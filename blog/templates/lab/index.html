@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>李志强教授实验室</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+                setTimeout(function(){window.scrollTo(0,1)}, 0);
+            }, false);
+    </script>
+    <!-- //for-mobile-apps -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/static/css/lrtk.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- js -->
+    <script src="/static/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <!-- //js -->
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <!-- //fonts -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="/static/js/move-top.js"></script>
+    <script type="text/javascript" src="/static/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 3000);
+            });
+        });
+
+    </script>
+    <!-- start-smoth-scrolling -->
+</head>
+<body>
+<!-- banner -->
+<div class="header">
+    <div class="container">
+        <div class="header-nav">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h1>
+                        <a class="navbar-brand" href="index">
+                            扬州大学李志强教授实验室
+                            <p>The Laboratory of Professor Zhiqiang Li</p>
+                        </a>
+                    </h1>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav ">
+                        <li><a class=" active" href="index"><h4>首页</h4><h5>Home</h5></a></li>
+
+                        <!-- <li><a href="list"><h4>会议</h4><h5>Meeting</h5></a></li> -->
+                        <li><a href="people"><h4>研究团队</h4><h5>People</h5></a></li>
+                        <li><a href="achievements"><h4>科研成果</h4><h5>Achievements</h5></a></li>
+                        <li><a href="resources"><h4>系统展示</h4><h5>Resources</h5></a></li>
+                        <li><a href="contact"><h4>联系我们</h4><h5>Contact</h5></a></li>
+                        <li><a href="#"><h4>内部管理</h4><h5>（预留）</h5></a></li>
+                    </ul>
+                </div><!-- /navbar-collapse -->
+                <!-- search-scripts -->
+                <script src="/static/js/classie.js"></script>
+                <script src="/static/js/uisearch.js"></script>
+                <script>
+                            new UISearch(document.getElementById('sb-search'));
+
+                </script>
+                <!-- //search-scripts -->
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="example-animation1">
+    {% for article in article_list %}
+    <div data-lazy-background="{{article.slider_image}}">
+        <div class="asdf" data-pos="['25%', '12%']" data-duration="700" data-effect="fadein">
+            <h3 class="sdf">
+                <a href="list"><span>{{article.slider_title}}</span></a>
+            </h3>
+            {{article.slider_description}}
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+<script type="text/javascript" src="/static/js/jquery.devrama.slider.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('.example-animation1').DrSlider();
+        });
+
+</script>
+<!-- banner -->
+<!-- banner-bottom -->
+<div class="banner-bottom">
+    <div class="container">
+        <h3>
+            实验室简介</h3>
+        <h3 style="font-size: 24px; color: #999; margin-top: 10px;">
+            About Us</h3>
+        <p style="text-align: left; text-indent: 2em; color: #333;">
+           {% autoescape off %} {{introduction.introduction}}{% endautoescape %}</p>
+    </div>
+</div>
+<!-- //banner-bottom -->
+<!-- content -->
+<div class="content" style="background: url('../../static/images/fbg.png') repeat">
+    <div class="banner-bottom">
+        <h3 style="color: #07d057">
+            科研团队</h3>
+        <h3 style="font-size: 24px; color: #999; margin-top: 10px;">
+            People</h3>
+    </div>
+    <div class="row" style="margin: 0 auto; padding: 0 40px 80px;">
+        <div class="col-md-12">
+            <img src="{{people.people_pic}}" width="30%"/>
+            <br/>
+            <br/>
+        </div>
+        <div class="col-md-6" style="padding-top: 0!important">
+            <p style="font-size: 15px; color: #FFF">
+                {{people.tutor}}
+            </p>
+        </div>
+        <div class="col-md-6">
+            <p style="font-family: Tahoma; color: #999; font-size: 14px;">
+               {{people.tutor_en}}
+            </p>
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+    <a href="#" style="height: 45px; width: 145px; line-height: 45px; text-align: center;
+            border: 1px solid #FFF; display: block; color: #FFF; font-size: 14px; background-color: #007751;
+            margin: 0 auto;">查看详情</a>
+    <br>
+</div>
+<!-- //content -->
+<!-- content bottom -->
+<div class="content-bottom" style="display:none;">
+    <h3>
+        研究领域</h3>
+    <h4 style="font-size: 24px; color: #999; margin-bottom: 50px; margin-top: 10px;">
+        Research Areas</h4>
+    <div class="container">
+        <div class="col-md-6 bottom-left text-center">
+            <ul id="sti-menu" class="sti-menu">
+                <li><a href="javascript:;" style="background: url('../../static/images/k1.jpg') no-repeat;">
+                    <h4 data-type="mText" class="sti-item">
+                        代谢工程</h4>
+                    <span data-type="icon" class="sti-icon sti-icon-care sti-item"></span></a></li>
+                <li data-hovercolor="#fff"><a href="javascript:;" style="background: url('../../static/images/k2.jpg') no-repeat;">
+                    <h4 data-type="mText" class="sti-item">
+                        合成生物学</h4>
+                    <span data-type="icon" class="sti-icon sti-icon-alternative sti-item"></span></a>
+                </li>
+                <li data-hovercolor="#fff"><a href="javascript:;" style="background: url('../../static/images/k3.jpg') no-repeat;">
+                    <h4 data-type="mText" class="sti-item">
+                        系统生物学</h4>
+                    <span data-type="icon" class="sti-icon sti-icon-family sti-item"></span></a>
+                </li>
+                <li data-hovercolor="#fff"><a href="javascript:;" style="background: url('../../static/images/k4.jpg') no-repeat;">
+                    <h4 data-type="mText" class="sti-item">
+                        生物燃料及平台化合物</h4>
+                    <span data-type="icon" class="sti-icon sti-icon-info sti-item"></span></a></li>
+            </ul>
+            <div class="clearfix">
+            </div>
+        </div>
+        <div class="col-md-6 bottom-right  grid">
+            <figure class="effect-moses">
+                <img src="/static/images/pic1.jpg" alt=""/>
+                <figcaption>
+                    <h4>微生物细胞工厂的理性设计</h4>
+                    <p style="font-size:26px;">纤维素资源的高效生物转化</p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+</div>
+<!-- //content bottom -->
+<!-- quote -->
+<div class="creative" style="display:none; background: #181b20 url('../../static/images/saa.jpg') no-repeat center top;">
+    <div class="container">
+        <h3 style="color: #07d057">
+            研究成果及论文</h3>
+        <h4 style="font-size: 24px; color: #999; margin-bottom: 50px; margin-top: 10px;">
+            Research Achievements</h4>
+        <div class="col-md-6 creative-left">
+            <h4 style="color: #07d057">
+                Advances and prospects in metabolic engineering of <i>Zymomonas mobilis</i></h4>
+            <p>
+                <img src="/static/images/l4.jpg" style="float: left; margin-right: 15px;"/>Biorefinery
+                of biomass-based biofuels and biochemicals by microorganisms is a competitive alternative
+                of traditional petroleum refineries. <i>Zymomonas mobilis</i> is a natural ethanologen
+                with many desirable characteristics, which makes it an ideal industrial microbial
+                biocatalyst for commercial production of desirable bioproducts through metabolic
+                engineering.
+            </p>
+        </div>
+        <div class="col-md-6 creative-right">
+            <h4 style="color: #07d057">
+                Complete genome sequence and the expression pattern of plasmids of the model ethanologen...</h4>
+            <p>
+                <img src="/static/images/l3.jpg" style="float: left; margin-right: 15px;"/>In this study,
+                we determined the complete chromosome and plasmid sequences of ZM4 and its engineered
+                xylose-utilizing derivatives 2032 and 8b. Compared to previously published and revised
+                ZM4 chromosome sequences, the ZM4 chromosome sequence reported here contains 65
+                nucleotide sequence variations as well as a 2400-bp insertion.
+            </p>
+        </div>
+        <div class="col-md-6 creative-left">
+            <h4 style="color: #07d057">
+                Progress and perspective on lignocellulosic hydrolysate inhibitor tolerance improvement
+                in <i>Zymomonas mobilis</i></h4>
+            <p>
+                <img src="/static/images/l2.jpg" style="float: left; margin-right: 15px;"/>Pretreatment
+                is the key step to overcome the recalcitrance of lignocellulosic biomass making
+                sugars available for subsequent enzymatic hydrolysis and microbial fermentation.
+                During the process of pretreatment and enzymatic hydrolysis as well as fermentation,
+                various toxic compounds may be generated with strong inhibition on cell growth and
+                the metabolic capacity of fermenting strains.
+            </p>
+        </div>
+        <div class="col-md-6 creative-right">
+            <h4 style="color: #07d057">
+                Identification of inhibitors in lignocellulosic slurries and determination of their
+                effect on hydrocarbon-producing microorganisms
+            </h4>
+            <p>
+                <img src="/static/images/l1.jpg" style="float: left; margin-right: 15px;"/>The aim of this
+                work was to identify inhibitors in pretreated lignocellulosic slurries, evaluate
+                high-throughput screening strategies, and investigate the impact of inhibitors on
+                potential hydrocarbon-producing microorganisms. Compounds present in slurries that
+                could inhibit microbial growth were identified through a detailed analysis of saccharified
+                slurries by applying a combination of approaches of high-performance liquid chromatography,
+                GC-MS, LC-DAD-MS, and ICP-MS.
+            </p>
+        </div>
+        <div class="clearfix">
+        </div>
+        <br>
+        <br>
+        <a href="#" style="height: 45px; width: 145px; line-height: 45px; text-align: center;
+                border: 1px solid #FFF; display: block; color: #FFF; font-size: 14px; background-color: #007751;
+                margin: 0 auto;">查看更多</a>
+    </div>
+</div>
+<div class="overview" style="display:none; background: #007751 url('../../static/images/sab.jpg') no-repeat center top;">
+    <div class="container">
+        <h3 class="tittle" style="font-size: 34px; margin-bottom: 10px;">
+            开放交流</h3>
+        <h4 style="font-size: 24px; color: #999; margin-bottom: 50px; margin-top: 10px;">
+            Events</h4>
+        <div class="col-md-3 list-grid">
+            <img src="/static/images/s01.jpg" alt=" "/>
+            <h4>
+                报告人：戴俊彪</h4>
+            <h4 style="font-size: 15px; text-align: center">
+                基因组的设计、合成与应用</h4>
+        </div>
+        <div class="col-md-3 list-grid">
+            <img src="/static/images/s02.jpg" alt=" "/>
+            <h4>
+                报告人：Joan W.Bennett</h4>
+            <h4 style="font-size: 15px; text-align: center">
+                Communication with fungal aroma compounds</h4>
+        </div>
+        <div class="col-md-3 list-grid">
+            <img src="/static/images/s03.jpg" alt=" "/>
+            <h4>
+                报告人：Frank E. Löffler</h4>
+            <h4 style="font-size: 15px; text-align: center">
+                Nitrogen cycling out of control: the need to renew the nitrogen economy</h4>
+        </div>
+        <div class="col-md-3 list-grid">
+            <img src="/static/images/s04.jpg" alt=" "/>
+            <h4>
+                报告人：Gary Sayler</h4>
+            <h4 style="font-size: 15px; text-align: center">
+                Volving a systems strategy for biosensing ecological and health risks of PTS in
+                the environment</h4>
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+</div>
+<div class="creative" style="padding: 30px 0; display:none;">
+    <h3 class="tittle" style="font-size: 34px; margin-bottom: 10px;">
+        友情链接</h3>
+    <h4 style="font-size: 24px; color: #999; margin-bottom: 50px; margin-top: 10px;">
+        Links</h4>
+    <div class="container links" style=" display:none;">
+        <div style="margin: 0 auto; width: 1136px; height: 46px; background: url('../../static/images/links0.png') no-repeat center center;">
+            <a href="http://www.nsfc.gov.cn/" target="_blank" style="width:224px;height:40px;"></a>
+            <a href="http://www.yzu.edu.cn" target="_blank" style="width:224px;height:40px;"></a>
+            <a href="http://itedu.yzu.edu.cn/" target="_blank" style="width:224px;height:40px;"></a>
+            <a href="http://std.jiangsu.gov.cn/" target="_blank" style="width:224px;height:40px;"></a>
+        </div>
+
+    </div>
+</div>
+<div class="footer-top" style="clear: both;">
+    <p>
+        Copyright &copy; 2020.扬州大学李志强教授版权所有 All rights reserved.</p>
+</div>
+<!-- //footer-top -->
+<!-- for bootstrap working -->
+<script src="/static/js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- smooth scrolling -->
+<script type="text/javascript">
+        $(document).ready(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+
+</script>
+<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;">
+    </span></a>
+<!-- //smooth scrolling -->
+</body>
+</html>

@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>研究团队</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/static/css/ihover.css" rel="stylesheet" media="all">
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- js -->
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <!-- //fonts -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="/static/js/move-top.js"></script>
+    <script type="text/javascript" src="/static/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+</head>
+<body>
+    <!-- banner -->
+    <div class="header">
+        <div class="container">
+            <div class="header-nav">
+                <nav class="navbar navbar-default">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h1>
+                                <a class="navbar-brand" href="index">
+                                    {{labname}}
+                                    <p>The Laboratory of Professor Zhiqiang Li</p>
+                                </a>
+                            </h1>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav ">
+                                <li><a href="index"><h4>首页</h4><h5>Home</h5></a></li>
+
+                                <!-- <li><a href="list"><h4>会议</h4><h5>Meeting</h5></a></li> -->
+                                <li><a class=" active" href="people"><h4>研究团队</h4><h5>People</h5></a></li>
+                                <li><a href="achievements"><h4>科研成果</h4><h5>Achievements</h5></a></li>
+                                <li><a href="resources"><h4>系统展示</h4><h5>Resources</h5></a></li>
+                                <li><a href="contact"><h4>联系我们</h4><h5>Contact</h5></a></li>
+                                <li><a href="#"><h4>内部管理</h4><h5>（预留）</h5></a></li>
+                            </ul>
+                        </div><!-- /navbar-collapse -->
+                        <!-- search-scripts -->
+                        <script src="/static/js/classie.js"></script>
+                        <script src="/static/js/uisearch.js"></script>
+                        <script>
+                            new UISearch(document.getElementById('sb-search'));
+                        </script>
+                        <!-- //search-scripts -->
+                    </nav>
+            </div>
+        </div>
+    </div>
+    <div class="banner-bottom" style="border-bottom: 1px solid #e1e1e1;">
+        <h3 style="color: #007751">
+            导师</h3>
+{#           <h3 style="font-size: 24px; color: black; margin-top: 10px;position:relative;left: 10%">#}
+{#        李志强:</h3>#}
+          {% for article in article_list %}
+              {% if article.identity == "教授" %}
+{#        <h3 style="font-size: 24px; color: black; margin-top: 10px;position:relative;left: 10%">#}
+{#           {{ article.name }}#}
+{#            </h3>#}
+              <img src="{{ article.pic}}" width="100px" style="margin-bottom:0;margin-right:0;margin-top:3%;"/>
+              <h4 style="font-size: 18px; color: black; width: 60%;position: relative;left:20%;margin-top: 2%" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{article.category}}</h4>
+            {% endif %}
+          {% endfor%}
+
+
+    </div>
+    <div class="team">
+        <div class="container">
+            {% for article in article_list %}
+             {% if article.category == '0' %}
+            <div class="col-md-4 welcome-grid text-center">
+                <div class="ih-item circle effect19">
+                    <a href="people-detail">
+                        <div class="img">
+                            <img src="/static/images/{{article.pic}}.jpg" alt="img"></div>
+                        <div class="info-ha">
+                            <h3>
+                                 <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a></h3>
+                            <p>
+                                {{article.identity}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+           {% endfor %}
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
+    <div class="banner-bottom" style="border-bottom: 1px solid #e1e1e1; padding-top: 0;">
+        <h3 style="color: #007751">
+            研究生团队</h3>
+        <h3 style="font-size: 24px; color: #999; margin-top: 10px;">
+            Graduate Students</h3>
+    </div>
+    <div class="team">
+        <div class="container">
+{#        {%for i in article_list  %}#}
+{#            <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;#}
+{#                line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">#}
+{#            {% if i.identity == "研究生" %}#}
+{#                2016级研究生:{{ i.name }}</div>{% endif %}{% endfor %}#}
+{#         <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;#}
+{#            line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">#}
+{#            2016级研究生</div>#}
+{#             {% for article in article_list %}#}
+{#             {% if article.category == '20' and article.identity == "研究生"%}#}
+{#            <div class="col-md-4 welcome-grid text-center">#}
+{#                <div class="ih-item circle effect19">#}
+{#                    <a href="people-detail">#}
+{#                        <div class="img">#}
+{#                            <img src="/static/images/{{article.pic}}.jpg" alt="img"></div>#}
+{#                        <div class="info-ha">#}
+{#                            <h3>#}
+{#                                 <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a></h3>#}
+{#                            <p>#}
+{#                                {{article.identity}}</p>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            {% endif %}#}
+{#           {% endfor %}#}
+{#        <div class="container">#}
+{#        <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;#}
+{#            line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">#}
+{#            2017级研究生</div>#}
+{#             {% for article in article_list %}#}
+{#             {% if article.category == '20' and article.identity == "研究生" %}#}
+{#            <div class="col-md-4 welcome-grid text-center">#}
+{#                <div class="ih-item circle effect19">#}
+{#                    <a href="people-detail">#}
+{#                        <div class="img">#}
+{#                            <img src="/static/images/{{article.pic}}.jpg" alt="img"></div>#}
+{#                        <div class="info-ha">#}
+{#                            <h3>#}
+{#                                <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a></h3>#}
+{#                            <p>#}
+{#                                {{article.identity}}</p>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            {% endif %}#}
+{#           {% endfor %}#}
+{#        <div class="container">#}
+{#        <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;#}
+{#            line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">#}
+{#            2018级研究生</div>#}
+{#             {% for article in article_list %}#}
+{#             {% if article.category == '20' and article.identity == "研究生"%}#}
+{#            <div class="col-md-4 welcome-grid text-center">#}
+{#                <div class="ih-item circle effect19">#}
+{#                    <a href="people-detail">#}
+{#                        <div class="img">#}
+{#                            <img src="/static/images/{{article.pic}}.jpg" alt="img"></div>#}
+{#                        <div class="info-ha">#}
+{#                            <h3>#}
+{#                                <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a>#}
+{#                            </h3>#}
+{#                            <p>#}
+{#                                {{article.identity}}</p>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            {% endif %}#}
+{#           {% endfor %}#}
+{#        <div class="container">#}
+{#        <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;#}
+{#            line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">#}
+{#            2019级研究生</div>#}
+{#             {% for article in article_list %}#}
+{#             {% if article.category == '20' and article.identity == "研究生"%}#}
+{#            <div class="col-md-4 welcome-grid text-center">#}
+{#                <div class="ih-item circle effect19">#}
+{#                    <a href="people-detail">#}
+{#                        <div class="img">#}
+{#                            <img src="/static/images/{{article.pic}}.jpg" alt="img"></div>#}
+{#                        <div class="info-ha">#}
+{#                            <h3>#}
+{#                                <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a>#}
+{#                            </h3>#}
+{#                            <p>#}
+{#                                {{article.identity}}</p>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#            {% endif %}#}
+{#           {% endfor %}#}
+<div class="container">
+        <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;
+            line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">
+            2016级研究生</div>
+         {% for article in article_list %}
+             {% if article.category == '16' %}
+            <div class="col-md-4 welcome-grid text-center">
+                <div class="ih-item circle effect19">
+                    <a href="/blog/people-detail/{{article.id}}">
+                        <div class="img">
+                            <img src="{{article.pic}}" alt="img"></div>
+                        <div class="info-ha">
+                            <h3>
+                               <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a></h3>
+                            <p>
+                                {{article.identity}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+           {% endfor %}
+        <div class="clearfix">
+        </div>
+    </div>
+    <div class="container">
+        <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;
+            line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">
+            2017级研究生</div>
+         {% for article in article_list %}
+             {% if article.category == '17' %}
+            <div class="col-md-4 welcome-grid text-center">
+                <div class="ih-item circle effect19">
+                    <a href="/blog/people-detail/{{article.id}}">
+                        <div class="img">
+                            <img src="{{article.pic}}" alt="img"></div>
+                        <div class="info-ha">
+                            <h3>
+                               <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a></h3>
+                            <p>
+                                {{article.identity}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+           {% endfor %}
+        <div class="clearfix">
+        </div>
+    </div>
+        <div class="container">
+        <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;
+            line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">
+            2018级研究生</div>
+         {% for article in article_list %}
+             {% if article.category == '18' %}
+            <div class="col-md-4 welcome-grid text-center">
+                <div class="ih-item circle effect19">
+                    <a href="/blog/people-detail/{{article.id}}">
+                        <div class="img">
+                            <img src="{{article.pic}}" alt="img"></div>
+                        <div class="info-ha">
+                            <h3>
+                               <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a></h3>
+                            <p>
+                                {{article.identity}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+           {% endfor %}
+        <div class="clearfix">
+        </div>
+    </div>
+    <div class="container">
+        <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;
+            line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">
+            2019级研究生</div>
+         {% for article in article_list %}
+             {% if article.category == '19' %}
+            <div class="col-md-4 welcome-grid text-center">
+                <div class="ih-item circle effect19">
+                    <a href="/blog/people-detail/{{article.id}}">
+                        <div class="img">
+                            <img src="{{article.pic}}" alt="img"></div>
+                        <div class="info-ha">
+                            <h3>
+                               <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a></h3>
+                            <p>
+                                {{article.identity}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+           {% endfor %}
+        <div class="clearfix">
+        </div>
+    </div>
+        <div class="container">
+        <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;
+            line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">
+            2020级研究生</div>
+         {% for article in article_list %}
+             {% if article.category == '20' %}
+            <div class="col-md-4 welcome-grid text-center">
+                <div class="ih-item circle effect19">
+                    <a href="/blog/people-detail/{{article.id}}">
+                        <div class="img">
+                            <img src="{{article.pic}}" alt="img"></div>
+                        <div class="info-ha">
+                            <h3>
+                               <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a></h3>
+                            <p>
+                                {{article.identity}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+           {% endfor %}
+        <div class="clearfix">
+        </div>
+    </div>
+           <div class="container">
+        <div style="width: 100%; border-bottom: 1px dotted #bbb; margin-bottom: 30px; height: 60px;
+            line-height: 60px; font-size: 26px; text-align: left; font-famliy: 微软雅黑">
+            本科生</div>
+         {% for article in article_list %}
+             {% if article.category == '3' %}
+            <div class="col-md-4 welcome-grid text-center">
+                <div class="ih-item circle effect19">
+                    <a href="/blog/people-detail/{{article.id}}">
+                        <div class="img">
+                            <img src="{{article.pic}}" alt="img"></div>
+                        <div class="info-ha">
+                            <h3>
+                               <a href="/blog/people-detail/{{article.id}}">{{article.name}}</a></h3>
+                            <p>
+                                {{article.identity}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+           {% endfor %}
+        <div class="clearfix">
+        </div>
+    </div>
+    </div>
+    <!-- //about -->
+    <!-- footer-top -->
+    <div class="footer-top" style="clear: both;">
+        <p>
+            Copyright &copy; 2018.扬州大学李志强教授版权所有 All rights reserved.</p>
+    </div>
+    <!-- //footer-top -->
+    <!-- for bootstrap working -->
+    <script src="/static/js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+    <!-- smooth scrolling -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;">
+    </span></a>
+    <!-- //smooth scrolling -->
+
+</body>
+</html>

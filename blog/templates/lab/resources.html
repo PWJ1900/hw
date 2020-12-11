@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Resources</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="/static/css/swipebox.css">
+    <!-- js -->
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <!-- //fonts -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="/static/js/move-top.js"></script>
+    <script type="text/javascript" src="/static/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- swipe box js -->
+    <script src="/static/js/jquery.swipebox.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $(".swipebox").swipebox();
+        });
+    </script>
+    <!-- //swipe box js -->
+</head>
+<body>
+    <!-- banner -->
+    <div class="header">
+        <div class="container">
+            <div class="header-nav">
+                <nav class="navbar navbar-default">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h1>
+                                <a class="navbar-brand" href="index">
+                                    {{labname}}
+                                    <p>The Laboratory of Professor Zhiqiang Li</p>
+                                </a>
+                            </h1>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav ">
+                                <li><a href="index"><h4>首页</h4><h5>Home</h5></a></li>
+                                
+                                <!-- <li><a href="list"><h4>科学研究</h4><h5>Research</h5></a></li> -->
+                                <li><a href="people"><h4>研究团队</h4><h5>People</h5></a></li>
+                                <li><a href="achievements"><h4>科研成果</h4><h5>Achievements</h5></a></li>
+                                <li><a class=" active" href="resources"><h4>系统展示</h4><h5>Resources</h5></a></li>
+                                <li><a href="contact"><h4>联系我们</h4><h5>Contact</h5></a></li><li><a href="#"><h4>内部管理</h4><h5>（预留）</h5></a></li>
+                            </ul>
+                        </div><!-- /navbar-collapse -->
+                        <!-- search-scripts -->
+                        <script src="/static/js/classie.js"></script>
+                        <script src="/static/js/uisearch.js"></script>
+                        <script>
+                            new UISearch(document.getElementById('sb-search'));
+                        </script>
+                        <!-- //search-scripts -->
+                    </nav>
+            </div>
+        </div>
+    </div>
+    <!-- gallery -->
+    <div class="gallery" style="background: #fafafa; padding: 0">
+        <div class="container">
+            <div class="banner-bottom" style="border-bottom: 1px solid #e1e1e1;">
+                <h3 style="color: #007751">
+                    科研资源</h3>
+                <h3 style="font-size: 24px; color: #999; margin-top: 10px;">
+                    Resources</h3>
+            </div>
+            <ul id="myTab" class="nav nav-tabs">
+{#                <li class="active"><a href="#home" data-toggle="tab">#}
+{#                    <h3>#}
+{#                        仪器设备</h3>#}
+{#                </a></li>#}
+                <li class="active"><a href="#ios" data-toggle="tab">
+                    <h3>
+                        常用网站</h3>
+                </a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+{#                <div class="tab-pane fade in active" id="home">#}
+{#                    <div class="gallery-grids">#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq1.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq1.jpg" alt="" class="img-responsive" style="height:200px" />#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">超纯水仪</h4>#}
+{#									</figcaption>#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq2.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq2.jpg" alt=""/ class="img-responsive"  style="height:200px">#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">PCR仪</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq3.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq3.jpg" alt=""/ class="img-responsive"  style="height:200px">#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">凝胶成像</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq4.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq4.jpg" alt=""/ class="img-responsive"  style="height:200px">#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">蛋白印迹</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq5.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq5.jpg" alt=""/ class="img-responsive" style="height:200px" >#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">APTR</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq6.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq6.jpg" alt=""/ class="img-responsive" style="height:200px" >#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">显微镜</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq7.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq7.jpg" alt=""/ class="img-responsive" style="height:200px" >#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">匀浆仪</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq8.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq8.jpg" alt=""/ class="img-responsive" style="height:200px" >#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">离心机</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq9.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq9.jpg" alt=""/ class="img-responsive" style="height:200px" >#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">Bioscreen C</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq10.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq10.jpg" alt=""/ class="img-responsive"  style="height:200px">#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">深孔板多连摇床</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq11.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq11.jpg" alt=""/ class="img-responsive"  style="height:200px">#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">500 mL 12 连罐</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq12.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq12.jpg" alt=""/ class="img-responsive" style="height:200px" >#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">1L 4 连罐</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq13.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq13.jpg" alt=""/ class="img-responsive" style="height:200px" >#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">HPLC</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq14.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq14.jpg" alt=""/ class="img-responsive"  style="height:200px">#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">生物传感器</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq15.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq15.jpg" alt=""/ class="img-responsive"  style="height:200px">#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">分光光度计</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 baner-bottom">#}
+{#                            <figure class="effect-bubba">#}
+{#								<a href="/static/images/yq16.jpg" class="b-link-stripe b-animate-go  swipebox">#}
+{#									<img src="/static/images/yq16.jpg" alt=""/ class="img-responsive" style="height:200px" >#}
+{#									<figcaption>#}
+{#										<h4 style="font-size:22px;padding:10px;padding-top:60px">曙光980服务器</h4>#}
+{#									</figcaption>	#}
+{#								</a>#}
+{#							</figure>#}
+{#                        </div>#}
+{#                        <div class="clearfix">#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+                <div class="tab-pane fade in active" id="ios">
+                    <table class="table table-hover table-bordered">
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <strong>数据库</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    1）
+                                </td>
+                                <td>
+                                    <a href="https://www.ncbi.nlm.nih.gov/">National Center for Biotechnology Information (NCBI) </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2）
+                                </td>
+                                <td>
+                                    <a href="http://www.genome.jp/kegg/">
+                                       Kyoto Encyclopedia of Genes and Genomes (KEGG) </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3）
+                                </td>
+                                <td>
+                                     <a href="http://www.yeastgenome.org/">Saccharomyces Genome Database (SGD)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4）
+                                </td>
+                                <td>
+                                    <a href="http://www.brenda-enzymes.org/">Enzyme Information System (BRENDA) </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    在线分析工具
+                                </td>
+                                <strong></strong>
+                            </tr>
+                            <tr>
+                                <td>
+                                    1）
+                                </td>
+                                <td>
+                                    <a href="http://www.softberry.com/berry.phtml?topic=bprom&amp;group=programs&amp;subgroup=gfindb">
+                                        Prediction of bacterial promoters </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2）
+                                </td>
+                                <td>
+                                     <a href="http://www.cbs.dtu.dk/services/SignalP/">Prediction of signal peptide</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3）
+                                </td>
+                                <td>
+                                   <a href="https://string-db.org/"> Protein Interaction Networks (STRING) </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4）
+                                </td>
+                                <td>
+                                    <a href="http://regulondb.ccg.unam.mx/index.jsp">
+                                        Transcriptional Regulatory Network (RegulonDB)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5）
+                                </td>
+                                <td>
+                                    <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">
+                                        Basic Local Alignment Search Tool (BLAST) </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    文献检索
+                                </td>
+                                <strong></strong>
+                            </tr>
+                            <tr>
+                                <td>
+                                    1）
+                                </td>
+                                <td>
+                                     <a href="https://www.ncbi.nlm.nih.gov/pubmed/">PubMed</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2）
+                                </td>
+                                <td>
+                                     <a href="https://sci-hub.tw/">Sci-Hub</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3）
+                                </td>
+                                <td>
+                                     <a href="http://www.geenmedical.com/">GeenMedical</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4）
+                                </td>
+                                <td>
+                                    <a href="http://xueshu.baidu.com/">百度学术</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5）
+                                </td>
+                                <td>
+                                    <a href="http://lib.hubu.edu.cn/">Web of Science 湖北大学图书馆</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    学术期刊
+                                </td>
+                                <strong></strong>
+                            </tr>
+                            <tr>
+                                <td>
+                                    1）
+                                </td>
+                                <td>
+                                     <a href="http://www.nature.com/nature/">Nature</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2）
+                                </td>
+                                <td>
+                                     <a href="http://www.sciencemag.org/">Science</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3）
+                                </td>
+                                <td>
+                                     <a href="http://www.pnas.org/">PNAS</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4）
+                                </td>
+                                <td>
+                                    <a href="https://www.sciencedirect.com/journal/metabolic-engineering">
+                                        Metabolic Engineering </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5）
+                                </td>
+                                <td>
+                                   <a href="https://biotechnologyforbiofuels.biomedcentral.com/"> Biotechnology for Biofuels</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    6）
+                                </td>
+                                <td>
+                                     <a href="http://aem.asm.org/">Applied and Environmental Microbiology</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    7）
+                                </td>
+                                <td>
+                                    <a href="https://link.springer.com/journal/253">
+                                        Applied Microbiology and Biotechnology </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //gallery -->
+    <!-- footer-top -->
+    <div class="footer-top" style="clear: both;">
+        <p>
+            Copyright &copy; 2020.扬州大学李志强教授版权所有 All rights reserved.</p>
+    </div>
+    <!-- //footer-top -->
+    <!-- for bootstrap working -->
+    <script src="/static/js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+    <!-- smooth scrolling -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear' 
+            };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;">
+    </span></a>
+    <!-- //smooth scrolling -->
+</body>
+</html>
